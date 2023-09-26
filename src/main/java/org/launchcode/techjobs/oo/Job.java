@@ -39,6 +39,14 @@ public class Job {
         return id == job.id;
     }
 
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Job job)) return false;
+//        return getId() == job.getId() && Objects.equals(getName(), job.getName()) && Objects.equals(getEmployer(), job.getEmployer()) && Objects.equals(getLocation(), job.getLocation()) && Objects.equals(getPositionType(), job.getPositionType()) && Objects.equals(getCoreCompetency(), job.getCoreCompetency());
+//    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
