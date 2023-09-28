@@ -8,6 +8,12 @@ import static org.testng.Assert.assertNotEquals;
 
 public class JobTest {
     //TODO: Create your unit tests here
+
+    @Test
+    public void emptyTest(){
+        assertEquals(true,  true);
+    }
+
     @Test
     public void testSettingJobId() {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));;
