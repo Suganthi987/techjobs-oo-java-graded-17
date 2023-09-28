@@ -27,7 +27,7 @@ public class Job {
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
-        this.coreCompetency =coreCompetency;
+        this.coreCompetency = coreCompetency;
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -39,6 +39,66 @@ public class Job {
         return id == job.id;
     }
 
+    public String toString() {
+        String newline = System.lineSeparator();
+        if(getEmployer() == null && getLocation() == null && getPositionType() == null && getCoreCompetency() == null){
+            return newline+newline;
+        }
+        else if(getEmployer().getValue().equals("") && getPositionType().getValue().equals("")){
+            return newline+ "ID: " + getId() + newline +
+                    "Name: " + getName() + newline +
+                    "Employer: " + "Data not available" + newline +
+                    "Location: " + getLocation().getValue() + newline +
+                    "Position Type: " + "Data not available" + newline +
+                    "Core Competency: " + getCoreCompetency().getValue()+newline;
+        }
+        else if (getEmployer().getValue().equals("")) {
+            return newline+ "ID: " + getId() + newline +
+                    "Name: " + getName() + newline +
+                    "Employer: " + "Data not available" + newline +
+                    "Location: " + getLocation().getValue() + newline +
+                    "Position Type: " + getPositionType().getValue() + newline +
+                    "Core Competency: " + getCoreCompetency().getValue()+newline;
+        }
+        else if (getLocation().getValue().equals("")) {
+            return newline+ "ID: " + getId() + newline +
+                    "Name: " + getName() + newline +
+                    "Employer: " + getEmployer().getValue() + newline +
+                    "Location: " + "Data not available" + newline +
+                    "Position Type: " + getPositionType().getValue() + newline +
+                    "Core Competency: " + getCoreCompetency().getValue()+newline;
+        }
+        else if (getPositionType().getValue().equals("")) {
+            return newline+ "ID: " + getId() + newline +
+                    "Name: " + getName() + newline +
+                    "Employer: " + getEmployer().getValue() + newline +
+                    "Location: " + getLocation().getValue() + newline +
+                    "Position Type: " + "Data not available" + newline +
+                    "Core Competency: " + getCoreCompetency().getValue()+newline;
+        }
+        else if (getCoreCompetency().getValue().equals("")) {
+            return newline+ "ID: " + getId() + newline +
+                    "Name: " + getName() + newline +
+                    "Employer: " + getEmployer().getValue() + newline +
+                    "Location: " + getLocation().getValue() + newline +
+                    "Position Type: " + getPositionType().getValue() + newline +
+                    "Core Competency: " + "Data not available" + newline;
+        }
+
+        else if (getEmployer().getValue() == null || getLocation().getValue() == null || getPositionType().getValue() == null || getCoreCompetency().getValue() == null) {
+            return newline + "OOPS! This job does not seem to exist." +newline;
+        }
+        else {
+            return  newline +
+                    "ID: " + getId() + newline +
+                    "Name: " + getName() + newline +
+                    "Employer: " + getEmployer().getValue() + newline +
+                    "Location: " + getLocation().getValue() + newline +
+                    "Position Type: " + getPositionType().getValue() + newline +
+                    "Core Competency: " + getCoreCompetency().getValue() +newline;
+
+        }
+    }
 
 //    @Override
 //    public boolean equals(Object o) {
